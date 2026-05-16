@@ -12,7 +12,7 @@ def pose_callback(msg):
     global current_mode
 
     height = msg.pose.position.z
-    if abs(height) > 0.9:
+    if abs(height) > 0.86:
         current_mode += 1
         if current_mode > 3:
             current_mode = 1

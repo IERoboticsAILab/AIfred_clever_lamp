@@ -103,6 +103,8 @@ To run the code you will need some prerequisites:
 
 ```bash
 uv sync
+
+sudo apt install xdotool
 ```
 
 #### Run demo

@@ -32,7 +32,7 @@ def create_custom_page_from_image(image_path):
     """
     # --- Config ---
     SERVE_DIR = "/tmp/alfred_web"
-    PORT = 8765
+    PORT = 8766
 
     # 1. Prepare the serving directory
     os.makedirs(SERVE_DIR, exist_ok=True)
@@ -75,10 +75,10 @@ def create_custom_page_from_image(image_path):
 
     # 4. Start the HTTP server in a background thread (only once)
     if not _is_port_in_use(PORT):
-        handler = http.server.SimpleHTTPRequestHandler
+        handler = lambda *args, **kwargs: http.server.SimpleHTTPRequestHandler(
+            *args, directory=SERVE_DIR, **kwargs
+        )
         server = http.server.HTTPServer(("0.0.0.0", PORT), handler)
-        # Change the server's working directory to SERVE_DIR
-        os.chdir(SERVE_DIR)
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
         rospy.loginfo(f"HTTP server started at http://localhost:{PORT}")

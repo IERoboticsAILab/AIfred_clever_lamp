@@ -27,7 +27,7 @@ did_search_already = False
 
 ''' HTTP SERVER CONFIG '''
 SERVE_DIR = "/tmp/alfred_web"
-PORT = 8765
+PORT = 8766
 # 1. Prepare the serving directory
 os.makedirs(SERVE_DIR, exist_ok=True)
 
