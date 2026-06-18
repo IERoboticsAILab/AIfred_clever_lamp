@@ -52,8 +52,8 @@ To run the code you will need some prerequisites:
 1. Optitrack system: It is a system of camares that detect position and orientation of cetain objects thank to capability of reflection of the ball markers.
 2. Install [natnet_ros_cpp](https://github.com/L2S-lab/natnet_ros_cpp) ros package to send messages from Optitrack to your `roscore`.
 2. Install [interbotics_ws](https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros_interface/ros1/software_setup.html) ros package to move and nteract wth wx250s robot arm from trossenrobotics.
-3. 3D print our [universal marker](https://github.com/IERoboticsAILab/3d_printing_designs/blob/main/files/optitrack/Universal_Marker_3.stl). It is an object that will be easily detected from Optitrack. We call it `umh_0`.
-4. 3D print our [custom wx250s base](https://github.com/IERoboticsAILab/3d_printing_designs/blob/main/files/WX-250_robot_garden/base/bottom_base_WX-250_for%20Optitrack.stl), for the robot arm. It has M3 scrues to host marker balls in place and detect position of robot base. We call it `real_base_wx250s`.
+3. 3D print our [universal marker](https://github.com/IERoboticsAILab/3d_printing_designs/blob/main/files/optitrack/Universal_Marker_3.stl). It is an object that will be easily detected from Optitrack. We call it `AIfred_umh`.
+4. 3D print our [custom wx250s base](https://github.com/IERoboticsAILab/3d_printing_designs/blob/main/files/WX-250_robot_garden/base/bottom_base_WX-250_for%20Optitrack.stl), for the robot arm. It has M3 scrues to host marker balls in place and detect position of robot base. We call it `AIfred_real_base_wx250s`.
 
 <br>
 
@@ -71,9 +71,9 @@ To run the code you will need some prerequisites:
 5. Connect a USB camera to PC and make it point on your working station.
 6. Turn on optitrack:
 
-    **a.** Turn on rigid body for mark base robot (download [here](https://github.com/IERoboticsAILab/3d_printing_designs/blob/main/files/WX-250_robot_garden/base/bottom_base_WX-250_for%20Optitrack.stl) `real_base_wx250s`)
+    **a.** Turn on rigid body for mark base robot (download [here](https://github.com/IERoboticsAILab/3d_printing_designs/blob/main/files/WX-250_robot_garden/base/bottom_base_WX-250_for%20Optitrack.stl) `AIfred_real_base_wx250s`)
 
-    **b.** Turn on rigid body for universal marker (download [here](https://github.com/IERoboticsAILab/3d_printing_designs/blob/main/files/optitrack/Universal_Marker_3.stl)`umh_0`)
+    **b.** Turn on rigid body for universal marker (download [here](https://github.com/IERoboticsAILab/3d_printing_designs/blob/main/files/optitrack/Universal_Marker_3.stl)`AIfred_umh`)
 
 
 #### Install software
@@ -146,7 +146,7 @@ The launch file will execute all the necessary nodes to have the full demo runni
 
 3. Make robot follow and point on the marker.
 
-    a. `brodcast marker`: This section of the project combine digital space wit real word with a user frendly interface. In RViz the robot is set in (0,0,0) that is the word cordinate space. But in the reality the robot is in a diffrent position in space (it depends where you position the working table). Here we take the Optitrack cordinates of the real robot base (`/natnet_ros/real_base_wx250s/pose`) in relation with the real marker (`/natnet_ros/umh_2/pose`), and we transform that relation with the digital robot base (`wx250s/base_link`), publishing a new tf for the marker (`umh_2_new`)
+    a. `brodcast marker`: This section of the project combine digital space wit real word with a user frendly interface. In RViz the robot is set in (0,0,0) that is the word cordinate space. But in the reality the robot is in a diffrent position in space (it depends where you position the working table). Here we take the Optitrack cordinates of the real robot base (`/natnet_ros/AIfred_real_base_wx250s/pose`) in relation with the real marker (`/natnet_ros/umh_2/pose`), and we transform that relation with the digital robot base (`wx250s/base_link`), publishing a new tf for the marker (`umh_2_new`)
 
     b. `clever lamp`: Look at the tf transformation of the universal marker position relative to the digital space and move end effector accordingly.
 
