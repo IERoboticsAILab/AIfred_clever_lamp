@@ -45,6 +45,10 @@ The agent has 3 intelligent modes:
 
 - DRAW - Draw on paper with the robot arm projecting alligned youtube videos to improve your drawing skills.
 
+<div align="center">
+  <img src="Videos_and_pictures/system_design.png" alt="System design diagram" width="750">
+  </div>
+
 ## Before running the code
 
 To run the code you will need some prerequisites:
