@@ -41,7 +41,7 @@ OUTPUT_GENERATED_IMG_PATH = "/home/gringo/catkin_ws/src/AIfred_clever_lamp/Video
 ''' SETUP GEMINI API '''
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 GEMINI_API = os.environ.get("GEMINI_API_KEY")
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.8-flash"
 GEMINI_GENERATE_IMG_MODEL = "gemini-2.5-flash-image" #"gemini-3.1-flash-image" #"gemini-3-pro-image-preview" #"gemini-2.5-flash-image" #"gemini-2.5-flash-image-preview-05-20" #"gemini-2.5-flash-image-preview"
 
 
@@ -345,7 +345,7 @@ def generate_homework_html_pages(title, steps, solution):
         }}
         .badge {{
             display: inline-block;
-            font-size: clamp(13px, 1.5vw, 17px);
+            font-size: clamp(26px, 3vw, 34px);
             font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -358,7 +358,7 @@ def generate_homework_html_pages(title, steps, solution):
         }}
         h2 {{
             font-family: 'DM Serif Display', serif;
-            font-size: clamp(28px, 5vw, 52px);
+            font-size: clamp(56px, 5vw, 104px);
             color: #1A1A2E;
             margin-bottom: 4vh;
             line-height: 1.2;
@@ -366,7 +366,7 @@ def generate_homework_html_pages(title, steps, solution):
             padding-left: 24px;
         }}
         .content {{
-            font-size: clamp(22px, 3.5vw, 42px);
+            font-size: clamp(44px, 3.5vw, 84px);
             color: #2A2A3A;
             line-height: 1.6;
             padding-left: 30px;
@@ -378,7 +378,7 @@ def generate_homework_html_pages(title, steps, solution):
             gap: 8px;
         }}
         .dot {{
-            height: 8px;
+            height: 18px;
             border-radius: 4px;
             flex: 1;
             background: #D8D4CE;

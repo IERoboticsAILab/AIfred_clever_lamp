@@ -20,6 +20,7 @@ def out_boundary(x, y):
     angle = math.atan2(y, x)
     boundary_x = 0.30 * math.cos(angle)
     boundary_y = 0.30 * math.sin(angle)
+    bot.arm.set_ee_pose_components(x=boundary_x, y=boundary_y, z=0.3, pitch=1.5, yaw=0, moving_time=1.8)
     bot.arm.set_ee_pose_components(x=boundary_x, y=boundary_y, z=0.3, pitch=1.5, yaw=0.2, moving_time=0.45)
     bot.arm.set_ee_pose_components(x=boundary_x, y=boundary_y, z=0.3, pitch=1.5, yaw=-0.2, moving_time=0.45)
     bot.arm.set_ee_pose_components(x=boundary_x, y=boundary_y, z=0.3, pitch=1.5, yaw=0.2, moving_time=0.45)
